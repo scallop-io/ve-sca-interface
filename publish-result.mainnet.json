@@ -1,0 +1,13 @@
+{
+  "packageId": "0x1158813b32962c2d22888fae257d5f2365b03631f0cd5d5b912ccdf51ff4e2f2",
+  "initialPackageId": "0xcfe2d87aa5712b67cad2732edb6a2201bfdf592377e5c0968b7cb02099bd8e21",
+  "upgradeCapId": "0xff506adcf48cef14b2e1dc63ffccbdc9898457a158c3b2752c5ec0419bf8e435",
+  "publisherIds": [
+    "0x07de630a2a929a6100ede7ba15a1e29ff184d2ad7d3614bb097ba048bd6faff4"
+  ],
+  "adminCap": "0x4d105b16467acca81d18c132cdd1a3cee159920a86c1ef4bdbf2e8d7878500c5",
+  "veScaTable": "0xd3a4632b1080f7d96e1c2487d4dabf2c1196916937c505a69954ac9f393be8d0",
+  "veScaTreasury": "0xafa4b6231e49c15a22d641ce33fda761baaf650fa21899dfa2eb1716146e7306",
+  "veScaConfig": "0x7cbcb0a342179577a117dfdff974cf1ab765d3b571067bf22ddf5f9e3a667922",
+  "displayObject": "0x4da75a29d43e8237d44afcd83eebad368b76bd7076f7192206db3a19292fecda"
+}
