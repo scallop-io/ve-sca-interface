@@ -1,0 +1,19 @@
+[package]
+name = "VeSca"
+version = "0.0.1"
+published-at = "0x1158813b32962c2d22888fae257d5f2365b03631f0cd5d5b912ccdf51ff4e2f2"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "mainnet"
+override = true
+
+[dependencies.Sca]
+git = "https://github.com/scallop-io/sca.git"
+subdir = "sca"
+rev = "main"
+
+[addresses]
+ve_sca = "0xcfe2d87aa5712b67cad2732edb6a2201bfdf592377e5c0968b7cb02099bd8e21"
+
