@@ -65,4 +65,26 @@ module ve_sca::error_code {
   public fun invalid_checkpoint_round(): u64 { INVALID_CHECKPOINT_ROUND }
   public fun ve_sca_amount_overflow(): u64 { VE_SCA_AMOUNT_OVERFLOW }
   public fun mul_div_overflow(): u64 { MUL_DIV_OVERFLOW }
+
+  // ===== Merge error codes =====
+  const MERGE_AFTER_UNLOCK: u64 = 1001;
+  const MERGE_ZERO_AMOUNT: u64 = 1002;
+
+  public fun merge_after_unlock(): u64 { MERGE_AFTER_UNLOCK }
+  public fun merge_zero_amount(): u64 { MERGE_ZERO_AMOUNT }
+
+  // ===== Subscribers error codes =====
+  const SUBSCRIBERS_NOT_NOTIFIED: u64 = 1101; // When try to do split/merge without notifying subscribers
+  const ADD_EXISTING_SUBSCRIBER_TO_WHITELIST: u64 = 1102; // When try to whitelist existing subscriber
+  const REMOVE_NON_EXISTING_SUBSCRIBER_FROM_WHITELIST: u64 = 1103; // When try to de-whitelist non-existing subscriber
+  const SUBSCRIBER_NOT_WHITELISTED: u64 = 1104; // When try to add non-whitelisted subscriber to veSCA
+  public fun subscribers_not_notified(): u64 { SUBSCRIBERS_NOT_NOTIFIED }
+  public fun add_existing_subscriber_to_whitelist(): u64 { ADD_EXISTING_SUBSCRIBER_TO_WHITELIST }
+  public fun remove_non_existing_subscriber_from_whitelist(): u64 { REMOVE_NON_EXISTING_SUBSCRIBER_FROM_WHITELIST }
+  public fun subscriber_not_whitelisted(): u64 { SUBSCRIBER_NOT_WHITELISTED }
+
+
+  // ===== Error that should never happen unless there's contract bug =====
+  const FATAL_ERROR: u64 = 9999;
+  public fun fatal_error(): u64 { FATAL_ERROR }
 }

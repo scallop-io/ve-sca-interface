@@ -4,6 +4,7 @@ module ve_sca::config {
   use sui::tx_context::TxContext;
   use sui::transfer;
   use sui::tx_context;
+  use ve_sca::ve_sca_subscriber::VeScaSubscriberWhitelist;
 
   use ve_sca::error_code;
 
@@ -59,6 +60,27 @@ module ve_sca::config {
   public fun enable_protocol(
     _admin_cap: &VeScaProtocolAdminCap,
     config: &mut VeScaProtocolConfig
+  ) {
+    abort 0
+  }
+
+  public fun initialize_subscribers(
+    _admin_cap: &VeScaProtocolAdminCap,
+    _ctx: &mut TxContext,
+  ) {
+    abort 0
+  }
+
+  public fun whitelist_subscriber<SUBSCRIBER_TYPE: drop>(
+    _admin_cap: &VeScaProtocolAdminCap,
+    _whitelist: &mut VeScaSubscriberWhitelist,
+  ) {
+    abort 0
+  }
+
+  public fun de_whitelist_subscriber<SUBSCRIBER_TYPE: drop>(
+    _admin_cap: &VeScaProtocolAdminCap,
+    whitelist: &mut VeScaSubscriberWhitelist,
   ) {
     abort 0
   }

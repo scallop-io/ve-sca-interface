@@ -12,6 +12,7 @@ module ve_sca::ve_sca {
 
   use ve_sca::config::{Self, VeScaProtocolConfig};
   use ve_sca::treasury::{Self, VeScaTreasury};
+  use ve_sca::ve_sca_subscriber::VeScaSubscriberTable;
   use ve_sca::calculator;
   use ve_sca::ve_sca_rules;
 
@@ -56,6 +57,23 @@ module ve_sca::ve_sca {
     new_locked_sca_amount: u64,
     new_unlock_at: u64,
   }
+
+  struct VeScasMergedEvent has copy, drop {
+    target_ve_sca_key: ID,
+    source_ve_sca_key: ID,
+    target_original_locked_sca_amount: u64,
+    target_original_unlock_at: u64,
+    source_original_locked_sca_amount: u64,
+    source_original_unlock_at: u64,
+    target_new_locked_sca_amount: u64,
+    target_new_unlock_at: u64,
+  }
+
+  struct VeScaSplitEvent has copy, drop {
+    from_ve_sca_key: ID,
+    split_amount: u64,
+    new_ve_sca_key: ID,
+  }  
 
   public fun mint_ve_sca_key(
     config: &VeScaProtocolConfig,
@@ -131,6 +149,41 @@ module ve_sca::ve_sca {
   }
 
   public fun ve_sca_amount(ve_sca_key_id: ID, ve_sca_table: &VeScaTable, clock: &Clock): u64 {
+    abort 0
+  }
+
+  /// Split the VeSCA key into two VeSCA keys
+  /// The locked SCA amount will be split into two, and the unlock time will be the same
+  public fun split(
+    config: &VeScaProtocolConfig,
+    ve_sca_key: &VeScaKey,
+    ve_sca_table: &mut VeScaTable,
+    ve_sca_subscriber_table: &VeScaSubscriberTable,
+    split_amount: u64,
+    ctx: &mut TxContext
+  ): VeScaKey {
+    abort 0
+  }
+
+  /// Merge two VeSCA keys into one
+  /// The locked SCA amount will be merged into one, and the unlock time will take which is longer
+  public fun merge(
+    config: &VeScaProtocolConfig,
+    target_key: &VeScaKey,
+    source_key: &VeScaKey,
+    ve_sca_table: &mut VeScaTable,
+    ve_sca_subscriber_table: &VeScaSubscriberTable,
+    clock: &Clock,
+  ) {
+    abort 0
+  }
+
+  // Check if split or merge action is allowed for a specific veSCA key
+  // If there're still subscribers then not allowed
+  public fun assert_split_merge_allowed(
+    ve_sca_key: &VeScaKey,
+    ve_sca_subscriber_table: &VeScaSubscriberTable,
+  ) {
     abort 0
   }
 }

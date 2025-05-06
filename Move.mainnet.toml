@@ -1,7 +1,7 @@
 [package]
 name = "VeSca"
 version = "0.0.1"
-published-at = "0x1158813b32962c2d22888fae257d5f2365b03631f0cd5d5b912ccdf51ff4e2f2"
+published-at = "0x8001c81c3ed16e6043acc04d8f7c1677baf288c3975f4bb2b8debcdd47321f90"
 
 [dependencies.Sui]
 git = "https://github.com/MystenLabs/sui.git"
